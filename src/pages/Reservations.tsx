@@ -1,41 +1,73 @@
-import { useState } from 'react';
-import { Calendar, Clock, Users, Phone, Mail, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useState } from "react";
+import { Calendar, Clock, Users, Phone, Mail, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const Reservations = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    time: '',
-    guests: '',
-    specialRequests: ''
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+    guests: "",
+    specialRequests: "",
   });
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Reservation submitted:', formData);
+    console.log("Reservation submitted:", formData);
   };
 
   const timeSlots = [
-    '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM',
-    '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM',
-    '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM',
-    '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM'
+    "8:00 AM",
+    "8:30 AM",
+    "9:00 AM",
+    "9:30 AM",
+    "10:00 AM",
+    "10:30 AM",
+    "11:00 AM",
+    "11:30 AM",
+    "12:00 PM",
+    "12:30 PM",
+    "1:00 PM",
+    "1:30 PM",
+    "2:00 PM",
+    "2:30 PM",
+    "3:00 PM",
+    "3:30 PM",
+    "4:00 PM",
+    "4:30 PM",
+    "5:00 PM",
+    "5:30 PM",
+    "6:00 PM",
+    "6:30 PM",
+    "7:00 PM",
+    "7:30 PM",
   ];
 
-  const guestOptions = ['1', '2', '3', '4', '5', '6', '7', '8', '8+'];
+  const guestOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "8+"];
 
   return (
     <div className="min-h-screen pt-20">
@@ -43,11 +75,12 @@ const Reservations = () => {
       <section className="py-16 lg:py-24 hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6 fade-in">
+            <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6 fade-in text-gold">
               Make a Reservation
             </h1>
             <p className="text-xl lg:text-2xl opacity-90 leading-relaxed slide-up">
-              Reserve your perfect spot for an unforgettable dining experience at Brewhouse.
+              Reserve your perfect spot for an unforgettable dining experience
+              at Brewhouse.
             </p>
           </div>
         </div>
@@ -65,7 +98,8 @@ const Reservations = () => {
                     Reservation Details
                   </CardTitle>
                   <CardDescription>
-                    Fill out the form below to secure your table. We'll confirm your reservation within 30 minutes.
+                    Fill out the form below to secure your table. We'll confirm
+                    your reservation within 30 minutes.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -73,7 +107,10 @@ const Reservations = () => {
                     {/* Personal Information */}
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="flex items-center gap-2">
+                        <Label
+                          htmlFor="name"
+                          className="flex items-center gap-2"
+                        >
                           <User className="h-4 w-4" />
                           Full Name
                         </Label>
@@ -81,12 +118,17 @@ const Reservations = () => {
                           id="name"
                           placeholder="Enter your full name"
                           value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("name", e.target.value)
+                          }
                           required
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="flex items-center gap-2">
+                        <Label
+                          htmlFor="email"
+                          className="flex items-center gap-2"
+                        >
                           <Mail className="h-4 w-4" />
                           Email
                         </Label>
@@ -95,14 +137,19 @@ const Reservations = () => {
                           type="email"
                           placeholder="Enter your email"
                           value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("email", e.target.value)
+                          }
                           required
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="phone" className="flex items-center gap-2">
+                      <Label
+                        htmlFor="phone"
+                        className="flex items-center gap-2"
+                      >
                         <Phone className="h-4 w-4" />
                         Phone Number
                       </Label>
@@ -111,7 +158,9 @@ const Reservations = () => {
                         type="tel"
                         placeholder="Enter your phone number"
                         value={formData.phone}
-                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("phone", e.target.value)
+                        }
                         required
                       />
                     </div>
@@ -119,7 +168,10 @@ const Reservations = () => {
                     {/* Reservation Details */}
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="date" className="flex items-center gap-2">
+                        <Label
+                          htmlFor="date"
+                          className="flex items-center gap-2"
+                        >
                           <Calendar className="h-4 w-4" />
                           Date
                         </Label>
@@ -127,8 +179,10 @@ const Reservations = () => {
                           id="date"
                           type="date"
                           value={formData.date}
-                          onChange={(e) => handleInputChange('date', e.target.value)}
-                          min={new Date().toISOString().split('T')[0]}
+                          onChange={(e) =>
+                            handleInputChange("date", e.target.value)
+                          }
+                          min={new Date().toISOString().split("T")[0]}
                           required
                         />
                       </div>
@@ -137,7 +191,12 @@ const Reservations = () => {
                           <Clock className="h-4 w-4" />
                           Time
                         </Label>
-                        <Select onValueChange={(value) => handleInputChange('time', value)} required>
+                        <Select
+                          onValueChange={(value) =>
+                            handleInputChange("time", value)
+                          }
+                          required
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Select time" />
                           </SelectTrigger>
@@ -155,14 +214,19 @@ const Reservations = () => {
                           <Users className="h-4 w-4" />
                           Guests
                         </Label>
-                        <Select onValueChange={(value) => handleInputChange('guests', value)} required>
+                        <Select
+                          onValueChange={(value) =>
+                            handleInputChange("guests", value)
+                          }
+                          required
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Number of guests" />
                           </SelectTrigger>
                           <SelectContent>
                             {guestOptions.map((guests) => (
                               <SelectItem key={guests} value={guests}>
-                                {guests} {guests === '1' ? 'Guest' : 'Guests'}
+                                {guests} {guests === "1" ? "Guest" : "Guests"}
                               </SelectItem>
                             ))}
                           </SelectContent>
@@ -179,13 +243,15 @@ const Reservations = () => {
                         id="requests"
                         placeholder="Any dietary restrictions, special occasions, seating preferences, etc."
                         value={formData.specialRequests}
-                        onChange={(e) => handleInputChange('specialRequests', e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("specialRequests", e.target.value)
+                        }
                         rows={3}
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-primary hover:bg-primary-hover text-primary-foreground shadow-soft hover:shadow-warm"
                       size="lg"
                     >
@@ -207,15 +273,21 @@ const Reservations = () => {
                   <CardContent className="space-y-3">
                     <div className="flex justify-between">
                       <span className="font-medium">Monday - Friday</span>
-                      <span className="text-muted-foreground">7:00 AM - 8:00 PM</span>
+                      <span className="text-muted-foreground">
+                        7:00 AM - 8:00 PM
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Saturday</span>
-                      <span className="text-muted-foreground">8:00 AM - 9:00 PM</span>
+                      <span className="text-muted-foreground">
+                        8:00 AM - 9:00 PM
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Sunday</span>
-                      <span className="text-muted-foreground">8:00 AM - 7:00 PM</span>
+                      <span className="text-muted-foreground">
+                        8:00 AM - 7:00 PM
+                      </span>
                     </div>
                   </CardContent>
                 </Card>
@@ -229,16 +301,21 @@ const Reservations = () => {
                   </CardHeader>
                   <CardContent className="space-y-4 text-sm text-muted-foreground">
                     <p>
-                      <strong className="text-primary">Confirmation:</strong> All reservations will be confirmed via email or phone within 30 minutes.
+                      <strong className="text-primary">Confirmation:</strong>{" "}
+                      All reservations will be confirmed via email or phone
+                      within 30 minutes.
                     </p>
                     <p>
-                      <strong className="text-primary">Cancellation:</strong> Please give us at least 2 hours notice for cancellations.
+                      <strong className="text-primary">Cancellation:</strong>{" "}
+                      Please give us at least 2 hours notice for cancellations.
                     </p>
                     <p>
-                      <strong className="text-primary">Late Arrivals:</strong> Tables are held for 15 minutes past reservation time.
+                      <strong className="text-primary">Late Arrivals:</strong>{" "}
+                      Tables are held for 15 minutes past reservation time.
                     </p>
                     <p>
-                      <strong className="text-primary">Large Groups:</strong> Parties of 8+ may require a deposit and set menu options.
+                      <strong className="text-primary">Large Groups:</strong>{" "}
+                      Parties of 8+ may require a deposit and set menu options.
                     </p>
                   </CardContent>
                 </Card>

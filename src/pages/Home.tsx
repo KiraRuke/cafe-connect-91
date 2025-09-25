@@ -79,7 +79,7 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center text-primary-foreground">
-          <h1 className="text-5xl lg:text-7xl font-display font-bold mb-6 fade-in">
+          <h1 className="text-5xl lg:text-7xl font-display font-bold mb-6 fade-in text-gold">
             Welcome to Brewhouse
           </h1>
           <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed slide-up opacity-90">
@@ -259,7 +259,7 @@ const Home = () => {
       <section className="py-16 lg:py-24 hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6 text-gold">
               Ready for Your Perfect Cup?
             </h2>
             <p className="text-xl lg:text-2xl opacity-90 mb-8 leading-relaxed">

@@ -1,142 +1,146 @@
-import { useState } from 'react';
-import { Coffee, Leaf, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { useState } from "react";
+import { Coffee, Leaf, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState('coffee');
+  const [activeCategory, setActiveCategory] = useState("coffee");
 
   const categories = [
-    { id: 'coffee', name: 'Coffee & Espresso', icon: Coffee },
-    { id: 'beverages', name: 'Beverages', icon: Leaf },
-    { id: 'food', name: 'Food & Pastries', icon: Star }
+    { id: "coffee", name: "Coffee & Espresso", icon: Coffee },
+    { id: "beverages", name: "Beverages", icon: Leaf },
+    { id: "food", name: "Food & Pastries", icon: Star },
   ];
 
   const menuItems = {
     coffee: [
       {
-        name: 'Signature Blend',
-        description: 'Our house blend with notes of chocolate and caramel',
-        price: '$4.50',
-        tags: ['Popular', 'House Blend'],
-        image: '/placeholder.svg'
+        name: "Signature Blend",
+        description: "Our house blend with notes of chocolate and caramel",
+        price: "$4.50",
+        tags: ["Popular", "House Blend"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Single Origin Ethiopia',
-        description: 'Bright and fruity with floral notes',
-        price: '$5.25',
-        tags: ['Single Origin', 'Light Roast'],
-        image: '/placeholder.svg'
+        name: "Single Origin Ethiopia",
+        description: "Bright and fruity with floral notes",
+        price: "$5.25",
+        tags: ["Single Origin", "Light Roast"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Cold Brew',
-        description: 'Smooth, refreshing coffee brewed cold for 18 hours',
-        price: '$4.75',
-        tags: ['Cold Brew', 'Refreshing'],
-        image: '/placeholder.svg'
+        name: "Cold Brew",
+        description: "Smooth, refreshing coffee brewed cold for 18 hours",
+        price: "$4.75",
+        tags: ["Cold Brew", "Refreshing"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Cappuccino',
-        description: 'Perfect balance of espresso, steamed milk, and foam',
-        price: '$4.25',
-        tags: ['Classic', 'Milk-based'],
-        image: '/placeholder.svg'
+        name: "Cappuccino",
+        description: "Perfect balance of espresso, steamed milk, and foam",
+        price: "$4.25",
+        tags: ["Classic", "Milk-based"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Latte',
-        description: 'Creamy steamed milk with a double shot of espresso',
-        price: '$4.50',
-        tags: ['Popular', 'Milk-based'],
-        image: '/placeholder.svg'
+        name: "Latte",
+        description: "Creamy steamed milk with a double shot of espresso",
+        price: "$4.50",
+        tags: ["Popular", "Milk-based"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Americano',
-        description: 'Rich espresso with hot water for a clean, bold taste',
-        price: '$3.75',
-        tags: ['Classic', 'Bold'],
-        image: '/placeholder.svg'
-      }
+        name: "Americano",
+        description: "Rich espresso with hot water for a clean, bold taste",
+        price: "$3.75",
+        tags: ["Classic", "Bold"],
+        image: "/placeholder.svg",
+      },
     ],
     beverages: [
       {
-        name: 'Chai Latte',
-        description: 'Spiced tea blend with steamed milk and honey',
-        price: '$4.25',
-        tags: ['Spiced', 'Non-Coffee'],
-        image: '/placeholder.svg'
+        name: "Chai Latte",
+        description: "Spiced tea blend with steamed milk and honey",
+        price: "$4.25",
+        tags: ["Spiced", "Non-Coffee"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Matcha Latte',
-        description: 'Premium Japanese matcha with steamed milk',
-        price: '$4.75',
-        tags: ['Matcha', 'Antioxidants'],
-        image: '/placeholder.svg'
+        name: "Matcha Latte",
+        description: "Premium Japanese matcha with steamed milk",
+        price: "$4.75",
+        tags: ["Matcha", "Antioxidants"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Golden Milk',
-        description: 'Turmeric blend with coconut milk and warming spices',
-        price: '$4.50',
-        tags: ['Healthy', 'Vegan'],
-        image: '/placeholder.svg'
+        name: "Golden Milk",
+        description: "Turmeric blend with coconut milk and warming spices",
+        price: "$4.50",
+        tags: ["Healthy", "Vegan"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Fresh Juice',
-        description: 'Daily selection of cold-pressed juices',
-        price: '$5.50',
-        tags: ['Fresh', 'Healthy'],
-        image: '/placeholder.svg'
-      }
+        name: "Fresh Juice",
+        description: "Daily selection of cold-pressed juices",
+        price: "$5.50",
+        tags: ["Fresh", "Healthy"],
+        image: "/placeholder.svg",
+      },
     ],
     food: [
       {
-        name: 'Avocado Toast',
-        description: 'Multigrain bread topped with smashed avocado, cherry tomatoes, and sea salt',
-        price: '$8.50',
-        tags: ['Healthy', 'Vegetarian'],
-        image: '/placeholder.svg'
+        name: "Avocado Toast",
+        description:
+          "Multigrain bread topped with smashed avocado, cherry tomatoes, and sea salt",
+        price: "$8.50",
+        tags: ["Healthy", "Vegetarian"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Croissant Sandwich',
-        description: 'Buttery croissant with scrambled eggs, cheese, and choice of meat',
-        price: '$9.25',
-        tags: ['Breakfast', 'Popular'],
-        image: '/placeholder.svg'
+        name: "Croissant Sandwich",
+        description:
+          "Buttery croissant with scrambled eggs, cheese, and choice of meat",
+        price: "$9.25",
+        tags: ["Breakfast", "Popular"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Acai Bowl',
-        description: 'Organic acai topped with granola, fresh berries, and coconut',
-        price: '$9.75',
-        tags: ['Healthy', 'Gluten-Free'],
-        image: '/placeholder.svg'
+        name: "Acai Bowl",
+        description:
+          "Organic acai topped with granola, fresh berries, and coconut",
+        price: "$9.75",
+        tags: ["Healthy", "Gluten-Free"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Artisan Pastries',
-        description: 'Daily selection of freshly baked pastries and muffins',
-        price: '$3.50',
-        tags: ['Fresh', 'Daily Special'],
-        image: '/placeholder.svg'
+        name: "Artisan Pastries",
+        description: "Daily selection of freshly baked pastries and muffins",
+        price: "$3.50",
+        tags: ["Fresh", "Daily Special"],
+        image: "/placeholder.svg",
       },
       {
-        name: 'Quinoa Salad',
-        description: 'Nutrient-rich quinoa with seasonal vegetables and tahini dressing',
-        price: '$10.50',
-        tags: ['Healthy', 'Vegan', 'Gluten-Free'],
-        image: '/placeholder.svg'
-      }
-    ]
+        name: "Quinoa Salad",
+        description:
+          "Nutrient-rich quinoa with seasonal vegetables and tahini dressing",
+        price: "$10.50",
+        tags: ["Healthy", "Vegan", "Gluten-Free"],
+        image: "/placeholder.svg",
+      },
+    ],
   };
 
   const getTagColor = (tag: string) => {
     const colors: { [key: string]: string } = {
-      'Popular': 'bg-gold text-gold-foreground',
-      'House Blend': 'bg-primary text-primary-foreground',
-      'Single Origin': 'bg-accent text-accent-foreground',
-      'Healthy': 'bg-accent text-accent-foreground',
-      'Vegan': 'bg-accent hover:bg-accent-hover text-accent-foreground',
-      'Gluten-Free': 'bg-secondary text-secondary-foreground',
-      'Fresh': 'bg-secondary text-secondary-foreground'
+      Popular: "bg-gold text-gold-foreground",
+      "House Blend": "bg-primary text-primary-foreground",
+      "Single Origin": "bg-accent text-accent-foreground",
+      Healthy: "bg-accent text-accent-foreground",
+      Vegan: "bg-accent hover:bg-accent-hover text-accent-foreground",
+      "Gluten-Free": "bg-secondary text-secondary-foreground",
+      Fresh: "bg-secondary text-secondary-foreground",
     };
-    return colors[tag] || 'bg-muted text-muted-foreground';
+    return colors[tag] || "bg-muted text-muted-foreground";
   };
 
   return (
@@ -145,11 +149,12 @@ const Menu = () => {
       <section className="py-16 lg:py-24 hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6 fade-in">
+            <h1 className="text-4xl lg:text-6xl font-display font-bold mb-6 fade-in text-gold">
               Our Menu
             </h1>
             <p className="text-xl lg:text-2xl opacity-90 leading-relaxed slide-up">
-              Carefully crafted beverages and artisanal food made with love and the finest ingredients.
+              Carefully crafted beverages and artisanal food made with love and
+              the finest ingredients.
             </p>
           </div>
         </div>
@@ -166,13 +171,15 @@ const Menu = () => {
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
                     activeCategory === category.id
-                      ? 'bg-primary text-primary-foreground shadow-soft'
-                      : 'text-muted-foreground hover:text-primary hover:bg-background/50'
+                      ? "bg-primary text-primary-foreground shadow-soft"
+                      : "text-muted-foreground hover:text-primary hover:bg-background/50"
                   }`}
                 >
                   <category.icon className="h-5 w-5" />
                   <span className="hidden sm:inline">{category.name}</span>
-                  <span className="sm:hidden">{category.name.split(' ')[0]}</span>
+                  <span className="sm:hidden">
+                    {category.name.split(" ")[0]}
+                  </span>
                 </button>
               ))}
             </div>
@@ -185,53 +192,57 @@ const Menu = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {menuItems[activeCategory as keyof typeof menuItems].map((item, index) => (
-                <div 
-                  key={item.name}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-warm transition-all duration-300 hover-lift"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 hero-gradient opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-display font-semibold text-primary group-hover:text-primary-hover transition-colors">
-                        {item.name}
-                      </h3>
-                      <span className="text-xl font-bold text-gold">{item.price}</span>
+              {menuItems[activeCategory as keyof typeof menuItems].map(
+                (item, index) => (
+                  <div
+                    key={item.name}
+                    className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-warm transition-all duration-300 hover-lift"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 hero-gradient opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                     </div>
-                    
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {item.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {item.tags.map((tag) => (
-                        <Badge 
-                          key={tag} 
-                          className={`${getTagColor(tag)} text-xs`}
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
+
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="text-xl font-display font-semibold text-primary group-hover:text-primary-hover transition-colors">
+                          {item.name}
+                        </h3>
+                        <span className="text-xl font-bold text-gold">
+                          {item.price}
+                        </span>
+                      </div>
+
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        {item.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {item.tags.map((tag) => (
+                          <Badge
+                            key={tag}
+                            className={`${getTagColor(tag)} text-xs`}
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <Button
+                        variant="outline"
+                        className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        Add to Order
+                      </Button>
                     </div>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    >
-                      Add to Order
-                    </Button>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </div>
@@ -245,17 +256,18 @@ const Menu = () => {
               Ready to Order?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Experience our carefully crafted menu items made fresh daily with premium ingredients.
+              Experience our carefully crafted menu items made fresh daily with
+              premium ingredients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-primary hover:bg-primary-hover text-primary-foreground shadow-soft hover:shadow-warm"
               >
                 Order Online
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               >
