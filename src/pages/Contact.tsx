@@ -1,14 +1,5 @@
 import { useState } from "react";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Send,
-  Instagram,
-  Facebook,
-  Twitter,
-} from "lucide-react";
+import { MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { contactInfo, socialLinks } from "@/constants/data";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,43 +30,6 @@ const Contact = () => {
     // Handle form submission
     console.log("Contact form submitted:", formData);
   };
-
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      details: ["123 Coffee Street", "Downtown District", "City, State 12345"],
-      link: "https://maps.google.com",
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: ["(555) 123-4567", "Available during business hours"],
-      link: "tel:+15551234567",
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: ["hello@brewhouse.com", "We respond within 24 hours"],
-      link: "mailto:hello@brewhouse.com",
-    },
-    {
-      icon: Clock,
-      title: "Hours",
-      details: [
-        "Mon-Fri: 7:00 AM - 8:00 PM",
-        "Sat: 8:00 AM - 9:00 PM",
-        "Sun: 8:00 AM - 7:00 PM",
-      ],
-      link: null,
-    },
-  ];
-
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-  ];
 
   return (
     <div className="min-h-screen pt-20">

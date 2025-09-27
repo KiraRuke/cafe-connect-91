@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { navItems } from "@/constants/data";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,14 +17,6 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Menu", path: "/menu" },
-    { name: "Reservations", path: "/reservations" },
-    { name: "Contact", path: "/contact" },
-  ];
 
   const isActive = (path: string) => location.pathname === path;
   const isHomePage = (path: string) => path === "/";

@@ -1,70 +1,11 @@
-import { ArrowRight, Star, Coffee, Clock, Heart } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-cafe.jpg";
-import coffeeSignature from "@/assets/coffee-signature.jpg";
-import avocadoToast from "@/assets/avocado-toast.jpg";
-import coldBrew from "@/assets/cold-brew.jpg";
+import { featuredItems, features, testimonials } from "@/constants/data";
 
 const Home = () => {
-  const featuredItems = [
-    {
-      name: "Signature Blend",
-      description: "Our house blend with notes of chocolate and caramel",
-      price: "$4.50",
-      image: coffeeSignature,
-    },
-    {
-      name: "Avocado Toast",
-      description: "Multigrain bread with smashed avocado and sea salt",
-      price: "$8.50",
-      image: avocadoToast,
-    },
-    {
-      name: "Cold Brew",
-      description: "Smooth coffee brewed cold for 18 hours",
-      price: "$4.75",
-      image: coldBrew,
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      text: "The best coffee in town! The atmosphere is perfect for both work and relaxation.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      text: "Amazing pastries and friendly staff. This place has become my daily ritual.",
-      rating: 5,
-    },
-    {
-      name: "Emma Rodriguez",
-      text: "Love the cozy ambiance and sustainable practices. Highly recommend!",
-      rating: 5,
-    },
-  ];
-
-  const features = [
-    {
-      icon: Coffee,
-      title: "Premium Coffee",
-      description: "Ethically sourced beans roasted fresh daily",
-    },
-    {
-      icon: Clock,
-      title: "Quick Service",
-      description: "Fast, friendly service without compromising quality",
-    },
-    {
-      icon: Heart,
-      title: "Made with Love",
-      description: "Every cup and dish prepared with passion and care",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -130,7 +71,7 @@ const Home = () => {
               {features.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="text-center group hover-lift"
+                  className="text-center group hover-lift py-4 rounded-3xl"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-primary text-primary-foreground rounded-3xl mb-6 shadow-soft group-hover:shadow-glow transition-all duration-300">
@@ -157,9 +98,10 @@ const Home = () => {
               <h2 className="text-3xl lg:text-5xl font-display font-bold text-primary mb-6">
                 Featured Favorites
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
                 Discover our most popular items, crafted with premium
-                ingredients and served with passion.
+                ingredients, prepared with care, and served with passion to
+                delight every taste.
               </p>
             </div>
 
@@ -232,21 +174,23 @@ const Home = () => {
                   className="shadow-soft hover:shadow-warm transition-all duration-300 hover-lift"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-5 w-5 text-gold fill-current"
-                        />
-                      ))}
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-4 italic">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <p className="text-muted-foreground leading-relaxed mb-4 italic grow">
                       "{testimonial.text}"
                     </p>
-                    <p className="font-semibold text-primary">
-                      — {testimonial.name}
-                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="h-5 w-5 text-gold fill-current"
+                          />
+                        ))}
+                      </div>
+                      <p className="font-semibold text-primary">
+                        — {testimonial.name}
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
