@@ -29,6 +29,12 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission
     console.log("Contact form submitted:", formData);
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
@@ -58,7 +64,7 @@ const Contact = () => {
                   key={info.title}
                   className="text-center shadow-soft hover:shadow-warm transition-all duration-300 hover-lift"
                 >
-                  <CardContent className="pt-8">
+                  <CardContent className="p-4 pt-8">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-2xl mb-6 shadow-soft">
                       <info.icon className="h-8 w-8" />
                     </div>
@@ -105,83 +111,88 @@ const Contact = () => {
 
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <Card className="shadow-warm">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-display text-primary">
-                    Send Us a Message
-                  </CardTitle>
-                  <CardDescription>
-                    Have a question, suggestion, or just want to say hello? We'd
-                    love to hear from you.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+              <Card className="shadow-warm flex flex-col p-6">
+                <div className="grow p-0">
+                  <CardHeader className="p-0">
+                    <CardTitle className="text-2xl font-display text-primary">
+                      Send Us a Message
+                    </CardTitle>
+                    <CardDescription>
+                      Have a question, suggestion, or just want to say hello?
+                      We'd love to hear from you.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-0 pt-10">
+                    <form onSubmit={handleSubmit}>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="name">Name</Label>
+                          <Input
+                            id="name"
+                            placeholder="Your full name"
+                            value={formData.name}
+                            onChange={(e) =>
+                              handleInputChange("name", e.target.value)
+                            }
+                            required
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="email">Email</Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            placeholder="Your email address"
+                            value={formData.email}
+                            onChange={(e) =>
+                              handleInputChange("email", e.target.value)
+                            }
+                            required
+                          />
+                        </div>
+                      </div>
+
                       <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
+                        <Label htmlFor="subject">Subject</Label>
                         <Input
-                          id="name"
-                          placeholder="Your full name"
-                          value={formData.name}
+                          id="subject"
+                          placeholder="What's this about?"
+                          value={formData.subject}
                           onChange={(e) =>
-                            handleInputChange("name", e.target.value)
+                            handleInputChange("subject", e.target.value)
                           }
                           required
                         />
                       </div>
+
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="Your email address"
-                          value={formData.email}
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea
+                          id="message"
+                          placeholder="Tell us more about how we can help you..."
+                          value={formData.message}
                           onChange={(e) =>
-                            handleInputChange("email", e.target.value)
+                            handleInputChange("message", e.target.value)
                           }
+                          rows={7}
+                          className="resize-none"
                           required
                         />
                       </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input
-                        id="subject"
-                        placeholder="What's this about?"
-                        value={formData.subject}
-                        onChange={(e) =>
-                          handleInputChange("subject", e.target.value)
-                        }
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        placeholder="Tell us more about how we can help you..."
-                        value={formData.message}
-                        onChange={(e) =>
-                          handleInputChange("message", e.target.value)
-                        }
-                        rows={5}
-                        required
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className="w-full bg-primary hover:bg-primary-hover text-primary-foreground shadow-soft hover:shadow-warm"
-                      size="lg"
-                    >
-                      <Send className="h-4 w-4 mr-2" />
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
+                    </form>
+                  </CardContent>
+                </div>
+                <div>
+                  <Button
+                    type="button"
+                    className="w-full bg-primary hover:bg-primary-hover text-primary-foreground shadow-soft hover:shadow-warm"
+                    size="lg"
+                    onClick={handleSubmit}
+                  >
+                    <Send className="h-4 w-4 mr-2" />
+                    Send Message
+                  </Button>
+                </div>
               </Card>
 
               {/* Map and Additional Info */}
