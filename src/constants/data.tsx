@@ -61,8 +61,8 @@ const contactInfo = [
     title: "Hours",
     details: [
       "Mon-Fri: 7:00 AM - 11:00 PM",
-      "Sat: 9:00 AM - 12:00 PM",
-      "Sun: 9:00 AM - 12:00 PM",
+      "Sat: 9:00 AM - 01:00 AM",
+      "Sun: 9:00 AM - 01:00 AM",
     ],
     link: null,
   },

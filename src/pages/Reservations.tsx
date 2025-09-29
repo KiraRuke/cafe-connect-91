@@ -273,19 +273,19 @@ const Reservations = () => {
                       <div className="flex justify-between">
                         <span className="font-medium">Monday - Friday</span>
                         <span className="text-muted-foreground">
-                          7:00 AM - 8:00 PM
+                          7:00 AM - 11:00 PM
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Saturday</span>
                         <span className="text-muted-foreground">
-                          8:00 AM - 9:00 PM
+                          9:00 AM - 01:00 AM
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Sunday</span>
                         <span className="text-muted-foreground">
-                          8:00 AM - 7:00 PM
+                          9:00 AM - 01:00 AM
                         </span>
                       </div>
                     </CardContent>
