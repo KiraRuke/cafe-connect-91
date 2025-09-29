@@ -98,7 +98,7 @@ const Menu = () => {
                         {item.description}
                       </p>
 
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-2">
                         {item.tags.map((tag) => (
                           <Badge
                             key={tag}
@@ -108,13 +108,6 @@ const Menu = () => {
                           </Badge>
                         ))}
                       </div>
-
-                      <Button
-                        variant="outline"
-                        className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      >
-                        Add to Order
-                      </Button>
                     </div>
                   </div>
                 )
