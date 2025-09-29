@@ -65,6 +65,16 @@ const Navigation = () => {
             ))}
           </div>
 
+          {/* CTA Button - Desktop */}
+          <div className="hidden lg:block">
+            <Button
+              variant="default"
+              className="bg-primary hover:bg-primary-hover text-primary-foreground"
+            >
+              Order Online
+            </Button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -97,6 +107,15 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+              <div className="pt-4 border-t border-border">
+                <Button
+                  variant="default"
+                  className="w-full bg-primary hover:bg-primary-hover text-primary-foreground"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Order Online
+                </Button>
+              </div>
             </div>
           </div>
         )}

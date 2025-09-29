@@ -1,6 +1,19 @@
-import coffeeSignature from "@/assets/coffee-signature.jpg";
-import avocadoToast from "@/assets/avocado-toast.jpg";
-import coldBrew from "@/assets/cold-brew.jpg";
+import acaibowl from "@/assets/acaibowl.jpeg";
+import americano from "@/assets/americano.jpeg";
+import artsianpastries from "@/assets/artsianpastries.jpeg";
+import avocadotoast from "@/assets/avocado-toast.jpg";
+import cappuccino from "@/assets/cappuccino.jpeg";
+import chailatte from "@/assets/chailatte.jpeg";
+import coffeesignature from "@/assets/coffee-signature.jpg";
+import coldbrew from "@/assets/cold-brew.jpg";
+import croissantsandwich from "@/assets/croissantsandwich.jpeg";
+import darkcoffee from "@/assets/darkcoffee.jpeg";
+import freshjuice from "@/assets/freshjuice.jpeg";
+import goldenmilk from "@/assets/goldenmilk.jpeg";
+import latte from "@/assets/latte.jpeg";
+import matcha from "@/assets/matcha.jpeg";
+import quinoasalad from "@/assets/quinoasalad.jpeg";
+
 import {
   Coffee,
   Clock,
@@ -66,19 +79,19 @@ const featuredItems = [
     name: "Signature Blend",
     description: "Our house blend with notes of chocolate and caramel",
     price: "₹180",
-    image: coffeeSignature,
+    image: coffeesignature,
   },
   {
     name: "Avocado Toast",
     description: "Multigrain bread with smashed avocado and sea salt",
     price: "₹240",
-    image: avocadoToast,
+    image: avocadotoast,
   },
   {
     name: "Cold Brew",
     description: "Smooth coffee brewed cold for 18 hours",
     price: "₹300",
-    image: coldBrew,
+    image: coldbrew,
   },
 ];
 
@@ -159,7 +172,7 @@ const menuItems = {
       description: "Our house blend with notes of chocolate and caramel",
       price: "₹180",
       tags: ["Popular", "House Blend"],
-      image: coffeeSignature,
+      image: coffeesignature,
     },
     {
       name: "Single Origin Ethiopia",
@@ -167,35 +180,35 @@ const menuItems = {
         "Bright and fruity with floral notes, coffee originated from Ethiopia",
       price: "₹250",
       tags: ["Single Origin", "Light Roast"],
-      image: coffeeSignature,
+      image: darkcoffee,
     },
     {
       name: "Cold Brew",
       description: "Smooth, refreshing coffee brewed cold for 18 hours",
       price: "₹120",
       tags: ["Cold Brew", "Refreshing"],
-      image: coldBrew,
+      image: coldbrew,
     },
     {
       name: "Cappuccino",
       description: "Perfect balance of espresso, steamed milk, and foam",
       price: "₹150",
       tags: ["Classic", "Milk-based"],
-      image: coldBrew,
+      image: cappuccino,
     },
     {
       name: "Latte",
       description: "Creamy steamed milk with a double shot of espresso",
       price: "₹200",
       tags: ["Popular", "Milk-based"],
-      image: coffeeSignature,
+      image: latte,
     },
     {
       name: "Americano",
       description: "Rich espresso with hot water for a clean, bold taste",
       price: "₹225",
       tags: ["Classic", "Bold"],
-      image: coffeeSignature,
+      image: americano,
     },
   ],
   beverages: [
@@ -204,28 +217,28 @@ const menuItems = {
       description: "Spiced tea blend with steamed milk and honey",
       price: "₹180",
       tags: ["Spiced", "Non-Coffee"],
-      image: "/placeholder.svg",
+      image: chailatte,
     },
     {
       name: "Matcha Latte",
       description: "Premium Japanese matcha with steamed milk",
       price: "₹220",
       tags: ["Matcha", "Antioxidants"],
-      image: "/placeholder.svg",
+      image: matcha,
     },
     {
       name: "Golden Milk",
       description: "Turmeric blend with coconut milk and warming spices",
       price: "₹175",
       tags: ["Healthy", "Vegan"],
-      image: "/placeholder.svg",
+      image: goldenmilk,
     },
     {
       name: "Fresh Juice",
       description: "Daily selection of cold-pressed juices",
       price: "₹120",
       tags: ["Fresh", "Healthy"],
-      image: "/placeholder.svg",
+      image: freshjuice,
     },
   ],
   food: [
@@ -235,7 +248,7 @@ const menuItems = {
         "Multigrain bread topped with smashed avocado, cherry tomatoes, and sea salt",
       price: "₹240",
       tags: ["Healthy", "Vegetarian"],
-      image: avocadoToast,
+      image: avocadotoast,
     },
     {
       name: "Croissant Sandwich",
@@ -243,7 +256,7 @@ const menuItems = {
         "Buttery croissant with scrambled eggs, cheese, and choice of meat",
       price: "₹125",
       tags: ["Breakfast", "Popular"],
-      image: "/placeholder.svg",
+      image: croissantsandwich,
     },
     {
       name: "Acai Bowl",
@@ -251,14 +264,14 @@ const menuItems = {
         "Organic acai topped with granola, fresh berries, and coconut",
       price: "₹275",
       tags: ["Healthy", "Gluten-Free"],
-      image: "/placeholder.svg",
+      image: acaibowl,
     },
     {
       name: "Artisan Pastries",
       description: "Daily selection of freshly baked pastries and muffins",
       price: "₹350",
       tags: ["Fresh", "Daily Special"],
-      image: "/placeholder.svg",
+      image: artsianpastries,
     },
     {
       name: "Quinoa Salad",
@@ -266,7 +279,7 @@ const menuItems = {
         "Nutrient-rich quinoa with seasonal vegetables and tahini dressing",
       price: "₹150",
       tags: ["Healthy", "Vegan", "Gluten-Free"],
-      image: "/placeholder.svg",
+      image: quinoasalad,
     },
   ],
 };
