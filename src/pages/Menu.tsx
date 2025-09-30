@@ -133,7 +133,12 @@ const Menu = () => {
                 size="lg"
                 className="bg-primary hover:bg-primary-hover text-primary-foreground shadow-soft hover:shadow-warm"
               >
-                Order Online
+                <a
+                  href="https://wa.me/918302712812?text=Hi!%20I%20want%20to%20book%20a%20table%20at%20BrewHouse%20café."
+                  target="_blank"
+                >
+                  Book a Table on WhatsApp
+                </a>
               </Button>
               <Button
                 variant="outline"
