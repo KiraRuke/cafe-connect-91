@@ -202,15 +202,12 @@ const Contact = () => {
                   <CardContent className="p-0">
                     <div className="h-64 bg-muted rounded-t-lg relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                        <div className="text-center">
-                          <MapPin className="h-12 w-12 text-primary mx-auto mb-2" />
-                          <p className="text-primary font-medium">
-                            Interactive Map
-                          </p>
-                          <p className="text-muted-foreground text-sm">
-                            Click to view in Google Maps
-                          </p>
-                        </div>
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6248.96657807202!2d77.04026077783966!3d28.415028713314065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23c1d833039d%3A0xe5fae20606e142ab!2sThe%20Brewhouse!5e0!3m2!1sen!2sin!4v1759200752012!5m2!1sen!2sin"
+                          width="600"
+                          height="256"
+                          loading="lazy"
+                        ></iframe>
                       </div>
                     </div>
                     <div className="p-6">
